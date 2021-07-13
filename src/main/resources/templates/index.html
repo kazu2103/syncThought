@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>message</title>
+</head>
+<body>
+
+<div id="form">
+    <p th:text="${errMsg}" />
+    <form method="post" th.action=@{/} th:object="${messageForm}">
+        <ul>
+        <li> 
+            <p>name: </p>
+            <input type="text" id='name' th:value="*{username}" th:field="*{username}" class="form-control" />
+        </li>
+        <li> 
+            <p>mail: </p>
+            <input type = "text" id='mail' th:value="*{mail}" th:field="*{mail}" class="form-control" />
+        </li> 
+        <li> 
+            <p>message: </p>
+            <input type = "text" id='message' th:value="*{message}" th:field="*{message}" class="form-control" />
+        </li> 
+        </ul>
+        <input type="submit" value="送信" />
+    </form>
+</div>
+</body>
+</html>
